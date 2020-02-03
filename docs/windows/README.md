@@ -12,6 +12,20 @@ Vista.
 Instead of following the directions in [Django Girls Tutorial
 Installation][installation], follow these setup instructions instead.
 
+1.  Check if you have an important setting enabled by opening a CLI window and
+    running the following command:
+
+    ```
+    powershell -command "$prop='VirtualizationFirmwareEnabled'; if ((get-wmiobject -class win32_processor -property $prop).$prop) {echo `n`n'Virtualization is enabled. You are ready to run Docker.'`n`n}else{echo `n`n'Virtualization is NOT enabled. This needs to be turned on before you can run Docker.'`n`n}"
+    ```
+
+    1.  If the result is the message `Virtualization is enabled. You are ready to
+        run Docker.`, then proceed to the next step.
+
+    1.  If the result is an error or the message `Virtualization is NOT
+        enabled. This needs to be turned on before you can run Docker.`, then
+        ask your coach for help.
+
 1.  Download [Docker Toolbox][docker toolbox]. The
     download link you want is the topmost `.exe` file on the release page. It
     should have a name like `DockerToolbox-19.03.1.exe`.
